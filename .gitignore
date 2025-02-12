@@ -1,1 +1,35 @@
-.vercel
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Vercel files (optional)
+.vercel/
+vercel.json
+
+# Environment Variables (VERY IMPORTANT)
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build files
+dist/
+build/
+.cache/
+
+# Misc
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
