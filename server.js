@@ -59,13 +59,15 @@ app.get("/health", (req, res) => {
   });
   
   // Self-Ping Mechanism to Keep Server Active
-  const SELF_URL = "https://dynamicfd.vercel.app/"; // Replace with your deployed backend URL
-  setInterval(() => {
-    axios
-      .get(`${SELF_URL}`)
-      .then(() => console.log("Self-ping successful!"))
-      .catch((err) => console.error("Self-ping failed:", err.message));
-  }, 600000); // Ping every 5 minutes
-  
+// Self-Ping Mechanism to Keep Server Active
+const SELF_URL = "https://dynamicfdbackend.onrender.com/"; // Replace with your deployed backend URL
+
+setInterval(() => {
+  axios
+    .get(SELF_URL)
+    .then(() => console.log("Self-ping successful!"))
+    .catch((err) => console.error("Self-ping failed:", err.message));
+}, 1800000); // 30 minutes (1,800,000 ms)
+
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
