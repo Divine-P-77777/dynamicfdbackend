@@ -4,6 +4,7 @@ const businessSchema = new mongoose.Schema(
   {
     businessName: { type: String, required: true },
     websiteStatus: { type: Boolean, default: false },
+    visited: { type: Boolean, default: false },
     contactInfo: { type: String, required: true },
     businessCategory: { type: String, required: true },
     area: { type: String, required: true },
@@ -11,7 +12,7 @@ const businessSchema = new mongoose.Schema(
     location: { type: String, required: true },
     pickingDate: { type: Date, required: true },
     deadline: { type: Date, required: true },
-    completedstatus: { type: String, enum: ["Pending", "Completed"], required: true },
+    completedstatus: { type: String, enum: ["Progress","Pending", "Completed"], required: true },
   },
   { timestamps: true }
 );
