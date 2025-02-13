@@ -10,12 +10,9 @@ dotenv.config({ path: './.env.local' });
 const app = express();
 const businessRoutes = require('./routes/business'); // ✅ Import business routes
 
-const allowedOrigins = [
-    "http://localhost:3000",
-    "https://dynamicfd.vercel.app",
-   
-];
 
+
+const allowedOrigins = process.env.ORIGIN.split(',');
 app.use(cors({
     origin: function (origin, callback) {
         if (!origin || allowedOrigins.includes(origin)) {
