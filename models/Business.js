@@ -12,7 +12,12 @@ const businessSchema = new mongoose.Schema(
     location: { type: String, required: true },
     pickingDate: { type: Date, required: true },
     deadline: { type: Date, required: true },
-    completedstatus: { type: String, enum: ["Progress","Pending", "Completed"], required: true },
+    completedstatus: { 
+      type: String, 
+      enum: ["Pending", "Progress", "Completed"],
+      required: [true, "Completed status is required"],
+      default: "Pending" // Add default value
+    },
   },
   { timestamps: true }
 );
